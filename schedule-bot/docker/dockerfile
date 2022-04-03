@@ -1,0 +1,17 @@
+FROM python:3.10.3-slim
+
+WORKDIR /app
+
+ENV TZ="Europe/Zurich"
+
+COPY requirements.txt requirements.txt
+COPY schedule.py schedule.py
+CMD ["mkdir","schedules"]
+COPY schedules/d2a_supsi.json schedules/d2a_supsi.json
+COPY schedules/channels.json schedules/channels.json
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD [ "python3", "-u" ,"schedule.py"]
