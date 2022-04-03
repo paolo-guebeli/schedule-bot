@@ -2,6 +2,7 @@ import asyncio
 import json
 import os
 import time
+import settings
 
 import discord
 from discord.ext import commands
@@ -17,7 +18,7 @@ print('ok')
 
 cm = CalendarManager('calendars')
 
-TOKEN = 'OTUwNzkzMzE5NzQ1NzIwMzgw.YieFSA.pzdmljeU1Cvqsq6br7Dm6mkhXSk'
+TOKEN = settings.TOKEN
 
 client = discord.Client()
 
